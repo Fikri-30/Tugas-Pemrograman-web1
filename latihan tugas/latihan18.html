@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Pilihan JavaScript</title>
+</head>
+<body>
+
+<script>
+    // ===== MENU UTAMA =====
+    function tampilMenu() {
+        let pilihan = prompt(
+            "Menu Pilihan :\n" +
+            "[1] Menghitung Kalkulator\n" +
+            "[2] Menghitung Luas Trapesium\n" +
+            "[3] Menghitung Deret\n\n" +
+            "Pilihan Anda :"
+        );
+
+        if (pilihan == 1) {
+            hitungKalkulator();
+        } else if (pilihan == 2) {
+            hitungTrapesium();
+        } else if (pilihan == 3) {
+            hitungDeret();
+        } else {
+            alert("Pilihan tidak valid!");
+        }
+    }
+
+    // ===== FUNGSI KALKULATOR =====
+    function hitungKalkulator() {
+        let a = parseFloat(prompt("Masukkan angka pertama :"));
+        let b = parseFloat(prompt("Masukkan angka kedua :"));
+        let op = prompt("Pilih operator (+  -  *  /) :");
+
+        let hasil;
+
+        if (op == "+") {
+            hasil = a + b;
+        } else if (op == "-") {
+            hasil = a - b;
+        } else if (op == "*") {
+            hasil = a * b;
+        } else if (op == "/") {
+            hasil = a / b;
+        } else {
+            alert("Operator tidak valid!");
+            return;
+        }
+
+        document.write("<h3>Perhitungan Kalkulator</h3>");
+        document.write(a + " " + op + " " + b + " = " + hasil);
+    }
+
+    // ===== FUNGSI LUAS TRAPESIUM =====
+    function hitungTrapesium() {
+        let a = parseFloat(prompt("Masukkan garis atas (cm) :"));
+        let b = parseFloat(prompt("Masukkan garis bawah (cm) :"));
+        let t = parseFloat(prompt("Masukkan tinggi (cm) :"));
+
+        let luas = 0.5 * (a + b) * t;
+
+        document.write("<h3>Menghitung Luas Trapesium</h3>");
+        document.write("Garis Atas : " + a + " cm<br>");
+        document.write("Garis Bawah : " + b + " cm<br>");
+        document.write("Tinggi : " + t + " cm<br><br>");
+        document.write("Luas = ½ × (" + a + " + " + b + ") × " + t + "<br>");
+        document.write("Luas = " + luas + " cm<sup>2</sup>");
+    }
+
+    // ===== FUNGSI DERET BILANGAN =====
+    function hitungDeret() {
+        let awal = parseInt(prompt("Masukkan nilai awal :"));
+        let akhir = parseInt(prompt("Masukkan nilai akhir :"));
+
+        let deret = "";
+        let jumlah = 0;
+        let total = 0;
+
+        for (let i = awal; i <= akhir; i++) {
+            if (i % 2 === 0 && i % 3 === 0) {
+                deret += i + " ";
+                jumlah++;
+                total += i;
+            }
+        }
+
+        document.write("<h3>Deret Bilangan Genap Habis Dibagi 3</h3>");
+        document.write("Nilai Awal : " + awal + "<br>");
+        document.write("Nilai Akhir : " + akhir + "<br><br>");
+        document.write("Deret yang tampil : " + deret + "<br>");
+        document.write("Jumlah deret bilangan : " + jumlah + " bilangan<br>");
+        document.write("Jumlah nilai bilangan tersebut : " + total);
+    }
+
+    // Panggil menu utama
+    tampilMenu();
+</script>
+
+</body>
+</html>

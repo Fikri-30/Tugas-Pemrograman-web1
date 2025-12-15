@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator JavaScript</title>
+</head>
+<body>
+
+    <h2>Kalkulator Sederhana</h2>
+
+    <input type="number" id="angka1" placeholder="Angka Pertama"><br><br>
+    <input type="number" id="angka2" placeholder="Angka Kedua"><br><br>
+
+    <button onclick="tambah()">+</button>
+    <button onclick="kurang()">-</button>
+    <button onclick="kali()">×</button>
+    <button onclick="bagi()">÷</button>
+
+    <h3>Hasil: <span id="hasil">0</span></h3>
+
+    <script>
+        function tambah() {
+            let a = Number(document.getElementById("angka1").value);
+            let b = Number(document.getElementById("angka2").value);
+            document.getElementById("hasil").innerHTML = a + b;
+        }
+
+        function kurang() {
+            let a = Number(document.getElementById("angka1").value);
+            let b = Number(document.getElementById("angka2").value);
+            document.getElementById("hasil").innerHTML = a - b;
+        }
+
+        function kali() {
+            let a = Number(document.getElementById("angka1").value);
+            let b = Number(document.getElementById("angka2").value);
+            document.getElementById("hasil").innerHTML = a * b;
+        }
+
+        function bagi() {
+            let a = Number(document.getElementById("angka1").value);
+            let b = Number(document.getElementById("angka2").value);
+
+            if (b === 0) {
+                alert("Tidak bisa dibagi dengan nol!");
+            } else {
+                document.getElementById("hasil").innerHTML = a / b;
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Contoh Alert, Prompt, Confirm, dan Form</title>
+</head>
+<body>
+
+    <h2>Form Data Mahasiswa</h2>
+
+    <!-- FORM -->
+    <form onsubmit="return prosesForm()">
+        <label>Nama:</label><br>
+        <input type="text" id="nama"><br><br>
+
+        <label>NIM:</label><br>
+        <input type="text" id="nim"><br><br>
+
+        <input type="submit" value="Kirim">
+    </form>
+
+    <script>
+        // ALERT
+        alert("Selamat datang di program JavaScript!");
+
+        // PROMPT
+        let jurusan = prompt("Masukkan jurusan Anda:");
+
+        // CONFIRM
+        let lanjut = confirm("Apakah Anda ingin melanjutkan mengisi form?");
+        if (!lanjut) {
+            alert("Terima kasih. Program dihentikan.");
+        }
+
+        // FUNGSI FORM
+        function prosesForm() {
+            let nama = document.getElementById("nama").value;
+            let nim = document.getElementById("nim").value;
+
+            if (nama === "" || nim === "") {
+                alert("Nama dan NIM harus diisi!");
+                return false;
+            }
+
+            alert(
+                "Data berhasil dikirim!\n" +
+                "Nama: " + nama + "\n" +
+                "NIM: " + nim + "\n" +
+                "Jurusan: " + jurusan
+            );
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
